@@ -21,6 +21,12 @@
     <ClCompile Include="rectangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="circle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="parallelogram.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base-types.h">
@@ -30,6 +36,12 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="rectangle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="circle.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="parallelogram.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

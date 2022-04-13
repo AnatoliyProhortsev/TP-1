@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="circle.cpp" />
     <ClCompile Include="GeometricalShapes.cpp" />
+    <ClCompile Include="parallelogram.cpp" />
     <ClCompile Include="rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base-types.h" />
+    <ClInclude Include="circle.h" />
+    <ClInclude Include="parallelogram.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="shape.h" />
   </ItemGroup>

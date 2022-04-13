@@ -11,5 +11,6 @@ namespace prohorcev
 		virtual void move(point_t pos) = 0;
 		virtual void move(double offset_x, double offset_y) = 0;
 		virtual void scale(double coefficient) = 0;
+		virtual void print_coordinates() = 0;
 	};
 }
