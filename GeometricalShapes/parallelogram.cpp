@@ -122,6 +122,6 @@ void Parallelogram::scale(double coefficient)
 
 void Parallelogram::print_coordinates()
 {
-	std::cout << std::setprecision(2) << "Параллелограм с координатами образующего треугольника\n"
+	std::cout << std::setprecision(5) << "Параллелограм с координатами образующего треугольника\n"
 		<< m_p1.x << ' ' << m_p1.y << ' '<< m_p2.x << ' ' << m_p2.y << ' ' << m_p3.x << ' ' << m_p3.y << '\n';
 }

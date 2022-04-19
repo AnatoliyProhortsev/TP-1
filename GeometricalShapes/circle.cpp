@@ -59,7 +59,7 @@ void Circle::scale(double coefficient)
 
 void Circle::print_coordinates()
 {
-	std::cout << std::setprecision(2) << "Круг с координатами центра и радиусом:\n"
+	std::cout << std::setprecision(4) << "Круг с координатами центра и радиусом:\n"
 		<< m_rect.pos.x << " " << m_rect.pos.y << " "
 		<< m_rect.height / 2 << '\n';
 }

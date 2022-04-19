@@ -55,7 +55,7 @@ void Rectangle::scale(double coefficient)
 
 void Rectangle::print_coordinates()
 {
-	std::cout <<std::setprecision(2)<< "Прямоугольник с координатами:\n" 
+	std::cout <<std::setprecision(4)<< "Прямоугольник с координатами:\n" 
 												   << double(m_rect.pos.x - m_rect.width / 2) << " " << double(m_rect.pos.y - m_rect.height / 2) << " "
 												   << double(m_rect.pos.x + m_rect.width / 2) << " " << double(m_rect.pos.y + m_rect.height / 2) << '\n';
 }
