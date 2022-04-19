@@ -23,14 +23,16 @@ int main()
 void testShape(std::shared_ptr<Shape> shape)
 {
     shape->print_coordinates();
-    std::cout << "Площадь фигуры: " << shape->getArea() << '\n';
-    std::cout << "-----scale(2.0)-----\n";
+    std::cout << "\nПлощадь фигуры: " << shape->getArea() << "\n\n";
+    shape->getFrameRect();
+    std::cout << "\n******scale(2.0)*******\n\n";
     shape->scale(2.0);
     shape->print_coordinates();
-    std::cout << "Площадь фигуры: " << shape->getArea() << '\n';
-    std::cout << "-----move(3.0, 4.0)-----\n";
+    std::cout << "\nПлощадь фигуры: " << shape->getArea() << '\n';
+    std::cout << "\n*****move(3.0, 4.0)****\n\n";
     shape->move(3.0, 4.0);
     shape->print_coordinates();
-    std::cout << "Площадь фигуры: " << shape->getArea() << '\n';
-    std::cout << "---------------------------------------------------\n";
+    std::cout << '\n';
+    shape->getFrameRect();
+    std::cout << "\n-------------------------------------------------------\n\n";
 }

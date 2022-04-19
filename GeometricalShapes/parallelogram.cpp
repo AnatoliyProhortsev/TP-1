@@ -37,8 +37,8 @@ Parallelogram::Parallelogram(double x1, double y1, double x2, double y2, double 
 		m_p3.y = y3;
 		m_rect.width = m_p2.x - m_p3.x + m_p2.x - m_p1.x;
 		m_rect.height = abs(m_p1.y - m_p3.y);
-		m_rect.pos.x = m_rect.width / 2;
-		m_rect.pos.x = m_rect.height / 2;
+		m_rect.pos.x = (m_p3.x + m_p2.x) / 2;
+		m_rect.pos.y = (m_p3.y + m_p2.y) / 2;
 	}
 }
 
@@ -71,6 +71,10 @@ double Parallelogram::getArea()
 
 rectangle_t Parallelogram::getFrameRect()
 {
+	std::cout << std::setprecision(4) << "Ограничивающий прямоугольник с координатами:\n"
+		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
+		<< m_rect.pos.x + m_rect.width / 2 << " " << m_rect.pos.y + m_rect.height / 2 << '\n';
+
 	return m_rect;
 }
 
@@ -102,7 +106,7 @@ void Parallelogram::move(double offset_x, double offset_y)
 void Parallelogram::scale(double coefficient)
 {
 	if (coefficient <= 0)
-		std::cout << "Невозможно масшатбировать прямоугольник с заданным коэффициентом.\n";
+		std::cout << "Невозможно масшатбировать параллелограмм с заданным коэффициентом.\n";
 	else
 	{
 		m_p1.x *= coefficient;
@@ -122,6 +126,6 @@ void Parallelogram::scale(double coefficient)
 
 void Parallelogram::print_coordinates()
 {
-	std::cout << std::setprecision(5) << "Параллелограм с координатами образующего треугольника\n"
+	std::cout << std::setprecision(5) << "Параллелограмм с координатами образующего треугольника:\n"
 		<< m_p1.x << ' ' << m_p1.y << ' '<< m_p2.x << ' ' << m_p2.y << ' ' << m_p3.x << ' ' << m_p3.y << '\n';
 }

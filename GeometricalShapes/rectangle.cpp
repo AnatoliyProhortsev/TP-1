@@ -28,6 +28,10 @@ double Rectangle::getArea()
 
 rectangle_t Rectangle::getFrameRect()
 {
+	std::cout << std::setprecision(4) << "Ограничивающий прямоугольник с координатами:\n"
+		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
+		<< m_rect.pos.x + m_rect.width / 2 << " " << m_rect.pos.y + m_rect.height / 2 << '\n';
+
 	return m_rect;
 }
 
