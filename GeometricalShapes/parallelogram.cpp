@@ -109,13 +109,13 @@ void Parallelogram::scale(double coefficient)
 		std::cout << "Невозможно масшатбировать параллелограмм с заданным коэффициентом.\n";
 	else
 	{
-		m_p1.x *= coefficient;
-		m_p2.x *= coefficient;
-		m_p3.x *= coefficient;
+		m_p1.x = (m_p1.x - m_rect.pos.x) * coefficient + m_rect.pos.x;
+		m_p2.x = (m_p2.x - m_rect.pos.x) * coefficient + m_rect.pos.x;
+		m_p3.x = (m_p3.x - m_rect.pos.x) * coefficient + m_rect.pos.x;
 
-		m_p1.y *= coefficient;
-		m_p2.y *= coefficient;
-		m_p3.y *= coefficient;
+		m_p1.y = (m_p1.y - m_rect.pos.y) * coefficient + m_rect.pos.y;
+		m_p2.y = (m_p2.y - m_rect.pos.y) * coefficient + m_rect.pos.y;
+		m_p3.y = (m_p3.y - m_rect.pos.y) * coefficient + m_rect.pos.y;
 
 		m_rect.width = m_p2.x - m_p3.x + m_p2.x - m_p1.x;
 		m_rect.height = abs(m_p1.y - m_p3.y);
