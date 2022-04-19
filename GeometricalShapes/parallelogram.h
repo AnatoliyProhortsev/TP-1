@@ -4,6 +4,9 @@
 #include <iomanip>
 #include "shape.h"
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 namespace prohorcev
 {
 	class Parallelogram : public Shape

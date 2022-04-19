@@ -24,6 +24,7 @@ void testShape(std::shared_ptr<Shape> shape)
 {
     shape->print_coordinates();
     std::cout << "Площадь фигуры: " << shape->getArea() << '\n';
+    std::cout << "-----scale(2.0)-----\n";
     shape->scale(2.0);
     shape->print_coordinates();
     std::cout << "Площадь фигуры: " << shape->getArea() << '\n';

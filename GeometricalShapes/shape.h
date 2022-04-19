@@ -2,9 +2,6 @@
 
 #include "base-types.h"
 
-#define _USE_MATH_DEFINES
-#include <cmath>
-
 namespace prohorcev
 {
 	class Shape
