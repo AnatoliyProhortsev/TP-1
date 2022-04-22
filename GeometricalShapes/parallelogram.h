@@ -15,7 +15,7 @@ namespace prohorcev
 		rectangle_t m_rect;
 		point_t m_p1, m_p2, m_p3;
 	public:
-		Parallelogram(double x1, double y1, double x2, double y2, double x3, double y3);
+		Parallelogram(point_t p1, point_t p2, point_t p3);
 		double getArea();
 		rectangle_t getFrameRect();
 		void move(point_t pos);

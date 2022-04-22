@@ -1,1 +1,2 @@
 E:\Study\1 Курс\Технологии программирования\1\Git\TP-1\GeometricalShapes\x64\Release\GeometricalShapes.exe
+C:\Users\grusers\source\repos\TP-1\GeometricalShapes\x64\Release\GeometricalShapes.exe

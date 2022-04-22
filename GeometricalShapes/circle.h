@@ -11,7 +11,7 @@ namespace prohorcev
 	private:
 		rectangle_t m_rect;
 	public:
-		Circle(double x_center, double y_center, double radius);
+		Circle(point_t center, double radius);
 		double getArea();
 		rectangle_t getFrameRect();
 		void move(point_t pos);

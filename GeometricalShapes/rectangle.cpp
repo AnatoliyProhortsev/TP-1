@@ -2,22 +2,16 @@
 
 using namespace prohorcev;
 
-Rectangle::Rectangle(double x_lower_left, double y_lower_left, double x_upper_right, double y_upper_right)
+Rectangle::Rectangle(point_t left_lower, point_t right_upper)
 {
-	if (x_lower_left >= x_upper_right || y_lower_left >= y_upper_right)
-	{
-		std::cout << "Неверные параметры прямоугольника. Создание прямоугольника с точками (0, 0, 0, 0)\n";
-		m_rect.height = 0;
-		m_rect.width = 0;
-		m_rect.pos.x = 0;
-		m_rect.pos.y = 0;
-	}
+	if (left_lower.x >= right_upper.x || left_lower.y >= right_upper.y)
+		throw std::invalid_argument("Неверные параметры прямоугольника.");
 	else
 	{
-		m_rect.height = y_upper_right - y_lower_left;
-		m_rect.width = x_upper_right - x_lower_left;
-		m_rect.pos.x = (x_upper_right + x_lower_left) / 2;
-		m_rect.pos.y = (y_upper_right + y_lower_left) / 2;
+		m_rect.height = right_upper.y - left_lower.y;
+		m_rect.width = right_upper.x - left_lower.x;
+		m_rect.pos.x = (right_upper.x + left_lower.x) / 2;
+		m_rect.pos.y = (right_upper.y + left_lower.y) / 2;
 	}
 }
 
@@ -28,7 +22,7 @@ double Rectangle::getArea()
 
 rectangle_t Rectangle::getFrameRect()
 {
-	std::cout << std::setprecision(4) << "Ограничивающий прямоугольник с координатами:\n"
+	std::cout << "Ограничивающий прямоугольник с координатами:\n"
 		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
 		<< m_rect.pos.x + m_rect.width / 2 << " " << m_rect.pos.y + m_rect.height / 2 << '\n';
 
@@ -59,7 +53,7 @@ void Rectangle::scale(double coefficient)
 
 void Rectangle::print_coordinates()
 {
-	std::cout <<std::setprecision(4)<< "Прямоугольник с координатами:\n" 
+	std::cout << "Прямоугольник с координатами:\n" 
 												   << double(m_rect.pos.x - m_rect.width / 2) << " " << double(m_rect.pos.y - m_rect.height / 2) << " "
 												   << double(m_rect.pos.x + m_rect.width / 2) << " " << double(m_rect.pos.y + m_rect.height / 2) << '\n';
 }

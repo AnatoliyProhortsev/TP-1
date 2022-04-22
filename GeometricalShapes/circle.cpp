@@ -2,20 +2,14 @@
 
 using namespace prohorcev;
 
-Circle::Circle(double x_center, double y_center, double radius)
+Circle::Circle(point_t center, double radius)
 {
 	if (radius <= 0)
-	{
-		std::cout << "Введён неверный радиус при создании круга. Создание круга (0,0,0)\n";
-		m_rect.height = 0;
-		m_rect.width = 0;
-		m_rect.pos.x = 0;
-		m_rect.pos.y = 0;
-	}
+		throw std::invalid_argument("Введён неверный радиус при создании круга.");
 	else
 	{
-		m_rect.pos.x = x_center;
-		m_rect.pos.y = y_center;
+		m_rect.pos.x = center.x;
+		m_rect.pos.y = center.y;
 
 		m_rect.height = 2 * radius;
 		m_rect.width = m_rect.height;
@@ -30,7 +24,7 @@ double Circle::getArea()
 
 rectangle_t Circle::getFrameRect()
 {
-	std::cout << std::setprecision(4) << "Ограничивающий прямоугольник с координатами:\n"
+	std::cout << "Ограничивающий прямоугольник с координатами:\n"
 		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
 		<< m_rect.pos.x + m_rect.width / 2 << " " << m_rect.pos.y + m_rect.height / 2 << '\n';
 
@@ -63,7 +57,7 @@ void Circle::scale(double coefficient)
 
 void Circle::print_coordinates()
 {
-	std::cout << std::setprecision(4) << "Круг с координатами центра и радиусом:\n"
+	std::cout << "Круг с координатами центра и радиусом:\n"
 		<< m_rect.pos.x << " " << m_rect.pos.y << " "
 		<< m_rect.height / 2 << '\n';
 }

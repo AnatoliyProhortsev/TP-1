@@ -11,7 +11,7 @@ namespace prohorcev
 	private:
 		rectangle_t m_rect;
 	public:
-		Rectangle(double x_lower_left, double y_lower_left, double x_upper_right, double y_upper_right);
+		Rectangle(point_t left_lower, point_t right_upper);
 		double getArea();
 		rectangle_t getFrameRect();
 		void move(point_t pos);
