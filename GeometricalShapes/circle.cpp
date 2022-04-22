@@ -2,7 +2,7 @@
 
 using namespace prohorcev;
 
-Circle::Circle(point_t center, double radius)
+Circle::Circle(const point_t &center, double radius)
 {
 	if (radius <= 0)
 		throw std::invalid_argument("Введён неверный радиус при создании круга.");
@@ -17,12 +17,12 @@ Circle::Circle(point_t center, double radius)
 	
 }
 
-double Circle::getArea()
+double Circle::getArea() const
 {
 	return m_rect.height * m_rect.height / 4 * 3.14;
 }
 
-rectangle_t Circle::getFrameRect()
+rectangle_t Circle::getFrameRect() const
 {
 	std::cout << "Ограничивающий прямоугольник с координатами:\n"
 		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
@@ -31,7 +31,7 @@ rectangle_t Circle::getFrameRect()
 	return m_rect;
 }
 
-void Circle::move(point_t pos)
+void Circle::move(const point_t& pos)
 {
 	m_rect.pos = pos;
 }
@@ -55,7 +55,7 @@ void Circle::scale(double coefficient)
 	}
 }
 
-void Circle::print_coordinates()
+void Circle::print_coordinates() const
 {
 	std::cout << "Круг с координатами центра и радиусом:\n"
 		<< m_rect.pos.x << " " << m_rect.pos.y << " "

@@ -4,12 +4,14 @@ namespace prohorcev
 {
 	struct point_t
 	{
-		double x, y;
+		double x;
+		double y;
 	};
 
 	struct rectangle_t
 	{
-		double width, height;
+		double width;
+		double height;
 		point_t pos;
 	};
 }

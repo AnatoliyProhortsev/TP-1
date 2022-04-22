@@ -2,7 +2,7 @@
 
 using namespace prohorcev;
 
-Rectangle::Rectangle(point_t left_lower, point_t right_upper)
+Rectangle::Rectangle(const point_t& left_lower, const point_t& right_upper)
 {
 	if (left_lower.x >= right_upper.x || left_lower.y >= right_upper.y)
 		throw std::invalid_argument("Неверные параметры прямоугольника.");
@@ -15,12 +15,12 @@ Rectangle::Rectangle(point_t left_lower, point_t right_upper)
 	}
 }
 
-double Rectangle::getArea()
+double Rectangle::getArea() const
 {
 	return m_rect.height * m_rect.width;
 }
 
-rectangle_t Rectangle::getFrameRect()
+rectangle_t Rectangle::getFrameRect() const
 {
 	std::cout << "Ограничивающий прямоугольник с координатами:\n"
 		<< m_rect.pos.x - m_rect.width / 2 << " " << m_rect.pos.y - m_rect.height / 2 << " "
@@ -29,7 +29,7 @@ rectangle_t Rectangle::getFrameRect()
 	return m_rect;
 }
 
-void Rectangle::move(point_t pos)
+void Rectangle::move(const point_t& pos)
 {
 	m_rect.pos = pos;
 }
@@ -51,9 +51,9 @@ void Rectangle::scale(double coefficient)
 	}
 }
 
-void Rectangle::print_coordinates()
+void Rectangle::print_coordinates() const
 {
 	std::cout << "Прямоугольник с координатами:\n" 
-												   << double(m_rect.pos.x - m_rect.width / 2) << " " << double(m_rect.pos.y - m_rect.height / 2) << " "
-												   << double(m_rect.pos.x + m_rect.width / 2) << " " << double(m_rect.pos.y + m_rect.height / 2) << '\n';
+			<< double(m_rect.pos.x - m_rect.width / 2) << " " << double(m_rect.pos.y - m_rect.height / 2) << " "
+			<< double(m_rect.pos.x + m_rect.width / 2) << " " << double(m_rect.pos.y + m_rect.height / 2) << '\n';
 }

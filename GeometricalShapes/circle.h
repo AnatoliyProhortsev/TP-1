@@ -11,12 +11,12 @@ namespace prohorcev
 	private:
 		rectangle_t m_rect;
 	public:
-		Circle(point_t center, double radius);
-		double getArea();
-		rectangle_t getFrameRect();
-		void move(point_t pos);
-		void move(double offset_x, double offset_y);
-		void scale(double coefficient);
-		void print_coordinates();
+		Circle(const point_t& center, double radius);
+		double getArea() const override;
+		rectangle_t getFrameRect() const override;
+		void move(const point_t& pos) override;
+		void move(double offset_x, double offset_y) override;
+		void scale(double coefficient) override;
+		void print_coordinates() const override;
 	};
 }
